@@ -1,12 +1,19 @@
 <h1>Hacker News Clone</h1>
+<ul>
 <a href="/login">Login</a>
 <a href="/logout">Logout</a>
 <a href="/create_post">Create Post</a>
 <a href="/profile">Profile</a>
+</ul>
 
 <ol>
 <% posts = Post.all %>
 <% posts.reverse.each do |post| %>
-<li><a href=<%= post.url %>><%= post.title %></a><br><a href="/comment/<%= post.id%>">Discuss</a></li>
+<li><input type='submit' data-post-id='<%= post.id %>' data-upvote='<%= UpvotePost.where(post_id: post.id).count %>' type='button' class='upvote' value ='<%= UpvotePost.where(post_id: post.id).count %>'><a href=<%= post.url %>><%= post.title %></a><br><a href="/comment/<%= post.id%>">Discuss</a></li>
 <% end %>
 </ol>
+
+
+<!-- <!DOCTYPE html>
+<button type="button" onclick="alert('Hello world!')"></button>
+ -->

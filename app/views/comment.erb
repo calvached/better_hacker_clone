@@ -1,5 +1,10 @@
 <h3>Discussion Page</h3>
-<a href="/">Home</a>
+<ul>
+  <a href="/">Home</a>
+  <a href="/create_post">Create Post</a>
+  <a href="/profile">Profile</a>
+</ul>
+
 <% post = Post.find(@post_id) %>
 <a href="<%= post.url %>"><%= post.title %></a>
 <form action='/add_comment'

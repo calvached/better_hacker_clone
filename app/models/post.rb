@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
   has_many :comments
   belongs_to :user
-  # Remember to create a migration!
+  has_many :upvote_posts
 end
